@@ -3,7 +3,7 @@ import Note from './Note';
 import Editable from './Editable';
 import LaneActions from '../actions/LaneActions';
 
-export default ({
+const Notes = ({
   notes,
   onNoteClick = () => {},
   onEdit = () => {},
@@ -28,4 +28,20 @@ export default ({
       </Note>
     </li>
   )}</ul>
-)
+);
+
+Notes.propTypes = {
+  notes: React.PropTypes.array,
+  onEdit: React.PropTypes.func,
+  onDelete: React.PropTypes.func,
+  onNoteClick: React.PropTypes.func
+};
+
+Notes.defaultProps = {
+  notes: [],
+  onEdit: () => {},
+  onDelete: () => {},
+  onNoteClick: () => {}
+};
+
+export default Notes;
